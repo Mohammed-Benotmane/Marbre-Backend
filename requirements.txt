@@ -26,7 +26,7 @@ pycryptodome==3.9.7
 pylint==2.3.1
 python-dateutil==1.5
 python-editor==1.0.4
-python-jose-cryptodome==1.3.2
+python-jose-cryptodome
 requests==2.24.0
 six==1.12.0
 SQLAlchemy==1.3.3
