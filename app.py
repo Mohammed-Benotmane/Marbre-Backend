@@ -14,7 +14,7 @@ db_drop_and_create_all()
 
 ## ROUTES
 @app.route('/')
-def get_marbre():
+def get_test():
     return jsonify({
         'success':True,
         'marbre': 'welcome'
@@ -36,4 +36,13 @@ def post_marbre():
     return jsonify({
         'Success':True,
         'Marbre': marbre.format()
+    })
+
+@app.route('/marbres',methods=['GET'])
+def get_marbre():
+    marbres = Marbre.query.all()
+    formatted_marbres = [marbre.format() for marbre in marbres] 
+    return jsonify({
+        'Success':True,
+        'marbres': formatted_marbres
     })
