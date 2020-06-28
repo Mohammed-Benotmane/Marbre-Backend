@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 import os
 database_name="marbreproject"
-database_path = os.environ.get('DATABASE_URL',"postgres://{}:{}@{}/{}".format('postgres', '','localhost:5432', database_name))
+database_path = os.environ.get('DATABASE_URL',"postgres://{}:{}@{}/{}".format('postgres', 'postgres','localhost:5432', database_name))
 
 db = SQLAlchemy()
 

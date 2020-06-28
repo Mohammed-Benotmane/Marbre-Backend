@@ -1,8 +1,7 @@
 import os
 from flask import Flask,jsonify,request,abort
-from models import setup_db,Medication,MedicationPharmacy,Pharmacy
+from models import setup_db
 from flask_cors import CORS
-from auth.auth import AuthError, requires_auth
 
 def create_app(test_config=None):
 
@@ -10,8 +9,6 @@ def create_app(test_config=None):
     setup_db(app)
     CORS(app)
 
-
-## ROUTES
     @app.route('/')
     def get_test():
         return jsonify({
@@ -31,7 +28,7 @@ def create_app(test_config=None):
             marbre = Marbre(title = new_title,image= new_image, price=new_price, origin=new_origin)
             marbre.insert()
         except:
-            print(sys.exc_info())
+            print(" ")
         return jsonify({
             'Success':True,
             'Marbre': marbre.format()
@@ -45,3 +42,9 @@ def create_app(test_config=None):
             'Success':True,
             'marbres': formatted_marbres
         })
+    return app
+
+app = create_app()
+
+if __name__ == '__main__':
+    app.run()
