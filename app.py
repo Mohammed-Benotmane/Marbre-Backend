@@ -1,6 +1,6 @@
 import os
 from flask import Flask,jsonify,request,abort
-from models import setup_db
+from models import setup_db,Marbre
 from flask_cors import CORS
 
 def create_app(test_config=None):
