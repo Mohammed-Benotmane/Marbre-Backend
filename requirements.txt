@@ -12,7 +12,6 @@ Flask-Script==2.0.6
 Flask-SQLAlchemy==2.4.0
 future==0.17.1
 gunicorn==20.0.4
-heroku==0.1.4
 idna==2.9
 isort==4.3.18
 itsdangerous==1.1.0
