@@ -55,7 +55,6 @@ def create_app(test_config=None):
             marbre.price = body.get("price")
         if(body.get("origin")):
             marbre.origin = body.get("origin")
-
         try:
             marbre.insert()
         except:
@@ -63,6 +62,15 @@ def create_app(test_config=None):
         return jsonify({
             'Success':True,
             'Marbre': marbre.format()
+        })
+    
+    @app.route('/marbres/<marbre_id>',methods=['DELETE'])
+    def delete_marbre(marbre_id):
+        marbre = Marbre.query.get(marbre_id)
+        marbre.delete()
+        return jsonify({
+            'success': True,
+            'deleted': marbre.format()
         })
 
     return app
