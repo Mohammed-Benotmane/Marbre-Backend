@@ -42,6 +42,29 @@ def create_app(test_config=None):
             'Success':True,
             'marbres': formatted_marbres
         })
+
+    @app.route('/marbres/<marbre_id>',methods=['PATCH'])
+    def patch_marbre(marbre_id):
+        body = request.get_json()
+        marbre = Marbre.query.get(marbre_id)
+        if(body.get("title")):
+            marbre.title = body.get("title")
+        if(body.get("image")):
+            marbre.image = body.get("image")
+        if(body.get("price")):
+            marbre.price = body.get("price")
+        if(body.get("origin")):
+            marbre.origin = body.get("origin")
+
+        try:
+            marbre.insert()
+        except:
+            print(" ")
+        return jsonify({
+            'Success':True,
+            'Marbre': marbre.format()
+        })
+
     return app
 
 app = create_app()
