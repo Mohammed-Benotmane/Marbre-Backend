@@ -23,9 +23,10 @@ def create_app(test_config=None):
         new_image = body.get("image",None)
         new_price = body.get("price",None)
         new_origin = body.get("origin",None)
+        new_description = body.get("description",None)
 
         try:
-            marbre = Marbre(title = new_title,image= new_image, price=new_price, origin=new_origin)
+            marbre = Marbre(title = new_title, image= new_image, price=new_price, origin=new_origin, description=new_description)
             marbre.insert()
         except:
             print(" ")
