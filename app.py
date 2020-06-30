@@ -56,6 +56,8 @@ def create_app(test_config=None):
             marbre.price = body.get("price")
         if(body.get("origin")):
             marbre.origin = body.get("origin")
+        if(body.get("description")):
+            marbre.description = body.get("description")
         try:
             marbre.insert()
         except:
