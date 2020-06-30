@@ -24,7 +24,7 @@ class Marbre(db.Model):
     image = Column(String(200))
     price = Column(Integer())
     origin = Column(String(80))
-    description = Column(String(500))
+    description = Column(String(500),nullable=True)
 
     def insert(self):
         db.session.add(self)
