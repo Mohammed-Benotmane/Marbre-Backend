@@ -18,7 +18,8 @@ This is a backend for an e-Shop marble App made with Flask (Python), and deploye
 * Python (logic)
 * VS code (Text Editor)
 * Postman (collaboration platform)
-* Heroku (cloud platform) 
+* Heroku (cloud platform)
+* Postgresql (relational database management system)
 
 ## Contribution:
 Feel free to fork this project and add whatever you like. If you have any suggestions or any comments please feel free to contact me or to open an issue.
