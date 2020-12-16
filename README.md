@@ -8,7 +8,10 @@
 This is a backend for an e-Shop marble App made with Flask (Python), and deployed on Heroku.
 
 ### Heroku Link:
-(https://marbreproject.herokuapp.com/)
+https://marbreproject.herokuapp.com/
+
+### Mobile app Link:
+https://github.com/Mohammed-Benotmane/Marbre-App
 
 ## Tools & languages:
 * Flask (Framework)
